@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      .container {
+        max-width: 500px;
+        margin: auto;
+        padding: 2rem;
+      }
+      .btn {
+        display: block;
+        padding: 15px 22px;
+        background: indigo;
+        border: none;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- task 1 -->
+      <p></p>
+      <button class="btn" onclick="task1()">Task 1</button>
+      <h3>Result :</h3>
+      <span id="result1"></span>
+      <hr />
+      <!-- task 3 -->
+      <p>
+        pengecekan bilangan cacah terkecil yang tidak ada dari data yang
+        diinputkan : <b>[5, 2, 8, 4, 3, 10]</b>
+      </p>
+      <button class="btn" onclick="task3()">Task 3</button>
+      <h3>Result :</h3>
+      <span id="result3"></span>
+      <hr />
+    </div>
+
+    <script>
+      // task 3
+      var num = [5, 2, 8, 4, 3, 10];
+      var missNum = new Array();
+      function task3() {
+        for (var i = 1; i <= num.length; i++) {
+          if (num.indexOf(i) == -1) {
+            missNum.push(i);
+          }
+        }
+        Array.min = function(array) {
+          return Math.min.apply(Math, array);
+        };
+        var minimum = Array.min(missNum);
+        var result3 = document.getElementById("result3");
+        return (result3.innerHTML = minimum);
+      }
+
+      //   task 1
+      const n = 100;
+      var arr = new Array(n);
+      function task1() {
+        for (var i = 0; i < arr.length; i++) {
+          var get3 = i % 3;
+          if (get3 == 0) {
+            console.log(i);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
